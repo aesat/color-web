@@ -1,41 +1,24 @@
-import axios from 'axios'
 import React from 'react'
-import './Card.css'
+import './Card.css' 
+
 
 class Card extends React.Component {
-
-    constructor(){
-        super()
-        this.state={
-              currentClass:'cardBody'
-        }
-    }
- 
-   changeColor=()=>{
-    //    console.log(this.props.CardHeader.toLowerCase())
-    if(this.state.currentClass==="cardBody"){
-        this.setState({currentClass: this.props.CardHeader.toLowerCase()})
-    }else{
-        this.setState({currentClass: "cardBody"})
-    }
-   }
-   
-
-   deleteItem=()=>{
-       axios.delete(`/home/${this.props.id}`).then(response=>console.log(response.data))
-   }
-
     render() {
-       return (
+        return (
             <div>
-            <div className={this.state.currentClass}>
-                <h3 onClick={this.changeColor}>{this.props.CardHeader}</h3>
-                <p>{this.props.CardDescription}</p>
-                <button onClick={this.deleteItem} className='btn btn-danger'>DELETE</button>
+                <div className="card">
+                    <img src="https://images.pexels.com/photos/4546165/pexels-photo-4546165.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title">{this.props.title}</h5>
+                        <p className="card-text">{this.props.price}₺</p>
+                        <div className="description"><p className="card-text ">{this.props.description}</p></div>
+                        <a href="/cardfeatures" className="btn btn-primary">İNCELE</a>
+                    </div>
                 </div>
             </div>
         )
     }
 }
+
 
 export default Card

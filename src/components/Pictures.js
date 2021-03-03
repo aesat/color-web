@@ -1,5 +1,4 @@
 import React from 'react'
-import  NavMenu  from "./NavMenu";
 import Phoots from "./Photos";
 
 class Pictures extends React.Component {
@@ -9,7 +8,6 @@ class Pictures extends React.Component {
     render() {
        return (
         <div className="container" id="pictures">
-        <NavMenu/>
         <div className="body">
            <Phoots photoURL="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?cs=srgb&dl=pexels-anjana-c-674010.jpg&fm=jpg"/>
            <Phoots photoURL="https://images.pexels.com/photos/534124/pexels-photo-534124.jpeg?cs=srgb&dl=pexels-pixabay-534124.jpg&fm=jpg"/>

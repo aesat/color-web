@@ -6,17 +6,22 @@ import axios from 'axios'
 class CardCreator extends Component {
 
     state={
-        color:'',
+        title:'',
         description:'',
+        price:'',
         image:''
     }
 
-    handleChangeColor=event=>{
-        this.setState({color: event.target.value})
+    handleChangeTitle=event=>{
+        this.setState({title: event.target.value})
     }
 
     handleChangeDescription=event=>{
         this.setState({description: event.target.value})
+    }
+
+    handleChangePrice=event=>{
+        this.setState({price: event.target.value})
     }
 
     handleChangeImage=event=>{
@@ -26,7 +31,7 @@ class CardCreator extends Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        axios.post("/home",{color: this.state.color, description: this.state.description})
+        axios.post("/home",{title: this.state.title,price:this.state.price ,description: this.state.description})
             .then((response) => {
                 console.log(response.data)
             })
@@ -44,12 +49,16 @@ class CardCreator extends Component {
             <div className="cardCreator">
                 <form onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label className="labelTitle" for="exampleInputEmail1">Color Name</label>
-                        <input onChange={this.handleChangeColor} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter a color name" />
+                        <label className="labelTitle" for="exampleInputEmail1">Ürünün Adı</label>
+                        <input onChange={this.handleChangeTitle} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ürünün Adını Giriniz" />
                     </div>
                     <div className="form-group">
-                        <label className="labelTitle" for="exampleInputPassword1">Description</label>
-                        <input onChange={this.handleChangeDescription} type="textarea" className="form-control" id="exampleInputPassword1" placeholder="Enter your feels about the color you entered" />
+                        <label className="labelTitle" for="exampleInputPassword1">Açıklama</label>
+                        <input onChange={this.handleChangeDescription} type="textarea" className="form-control" id="exampleInputPassword1" placeholder="Açıklama Giriniz" />
+                    </div>
+                    <div className="form-group">
+                        <label className="labelTitle" for="exampleInputPassword1">Fiyat</label>
+                        <input onChange={this.handleChangePrice} type="textarea" className="form-control" id="exampleInputPassword1" placeholder="Fiyatı Giriniz" />
                     </div>
                     <div className="form-group">
                         <label className="labelTitle" for="exampleInputPassword1">Images</label>

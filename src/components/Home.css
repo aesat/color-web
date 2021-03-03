@@ -3,7 +3,10 @@
     }
   .container {
     background-color: #343A40;
-    min-height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
   }
   
@@ -12,8 +15,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     height:100%;
   }
+
+  
   
   
   
