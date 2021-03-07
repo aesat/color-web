@@ -8,6 +8,7 @@ class NavMenu extends React.Component {
  
     handleFormSubmit=(event)=>{
         event.preventDefault()
+        console.log(event)
     }
 
     render() {
@@ -18,7 +19,7 @@ class NavMenu extends React.Component {
                     onChange={this.props.searchCardsProp} 
                     type="text" placeholder="Bir Ürün Adı Giriniz" 
                     className="mr-sm-2" />
-                    <Button variant="outline-info">Ara</Button>
+                    <Button className="searchButton" variant="outline-info">Ara</Button>
                 </Form>
             </div>
         )

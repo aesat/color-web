@@ -6,10 +6,12 @@
         flex-wrap: nowrap;
        justify-content: space-around;
        margin-bottom: 20px;
+       margin-right: 20px;
     }
 
-    .mr-sm-2{
-        margin-right: 15px;
+    .searchButton{
+        margin-left: -5px;
     }
 
 }
+

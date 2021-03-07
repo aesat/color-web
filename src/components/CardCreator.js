@@ -37,9 +37,7 @@ class CardCreator extends Component {
             })
             .catch(e => console.log(e))
 
-            axios.get("/home").then(response=>{
-                this.setState({cards: response.data})
-              })
+           
 
             
     }
@@ -47,21 +45,21 @@ class CardCreator extends Component {
     render() {
         return (
             <div className="cardCreator">
-                <form onSubmit={this.handleSubmit}>
+                <form className="form" onSubmit={this.handleSubmit}>
                     <div className="form-group">
-                        <label className="labelTitle" for="exampleInputEmail1">Ürünün Adı</label>
+                        <label className="labelTitle" htmlFor="exampleInputEmail1">Ürünün Adı</label>
                         <input onChange={this.handleChangeTitle} type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ürünün Adını Giriniz" />
                     </div>
                     <div className="form-group">
-                        <label className="labelTitle" for="exampleInputPassword1">Açıklama</label>
+                        <label className="labelTitle" htmlFor="exampleInputPassword1">Açıklama</label>
                         <input onChange={this.handleChangeDescription} type="textarea" className="form-control" id="exampleInputPassword1" placeholder="Açıklama Giriniz" />
                     </div>
                     <div className="form-group">
-                        <label className="labelTitle" for="exampleInputPassword1">Fiyat</label>
+                        <label className="labelTitle" htmlFor="exampleInputPassword1">Fiyat</label>
                         <input onChange={this.handleChangePrice} type="textarea" className="form-control" id="exampleInputPassword1" placeholder="Fiyatı Giriniz" />
                     </div>
                     <div className="form-group">
-                        <label className="labelTitle" for="exampleInputPassword1">Images</label>
+                        <label className="labelTitle" htmlFor="exampleInputPassword1">Images</label>
                         <input onChange={this.handleChangeImage} type="file"  className="form-control" alt="" placeholder="Enter the images" />
                     </div>
                     <button type="submit" className="btn btn-primary">Create</button>
