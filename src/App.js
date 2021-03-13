@@ -6,6 +6,7 @@ import Pictures from "./components/Pictures";
 import About from "./components/About"
 import CardFeatures from "./components/CardFeatures";
 import NavMenu from "./components/NavMenu";
+import CardCreator from "./components/CardCreator";
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <Route path="/cardfeatures" component={CardFeatures}/>
       <Route path="/home" component={Home}/>
       <Route path="/pictures" component={Pictures}/>
+      <Route path="/rec" component={CardCreator}/>
       </Switch>
     </Router>
     

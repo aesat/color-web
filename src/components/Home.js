@@ -27,29 +27,29 @@ class Home extends React.Component {
   //Sort Functions
 
   sortByPriceUp = () => {
-    let prices=this.state.cards.map(
-      (card)=>{
-        return card.date
-      }
-    )
-    prices.sort()
-    console.log(this.state.cards)
-
-    
+    this.state.cards.sort((a,b)=>(a.price>b.price) ? 1:-1)
   }
 
   sortByPriceDown = () => {
-    console.log("pricedown")
+    this.state.cards.sort((a,b)=>(a.price<b.price) ? 1:-1)
   }
 
+
+  sortByNameUp = () => {
+    this.state.cards.sort((a,b)=>(a.title>b.title) ? 1:-1)
+   }
+
+
+  sortByNameDown = () => {
+    this.state.cards.sort((a,b)=>(a.title<b.title) ? 1:-1)
+  }
 
   sortByDateUp = () => {
-    console.log("dateup")
+    this.state.cards.sort((a,b)=>(a.id<b.id) ? 1:-1)
   }
 
-
   sortByDateDown = () => {
-    console.log("datedown")
+    this.state.cards.sort((a,b)=>(a.id>b.id) ? 1:-1)
   }
 
   render() {
@@ -66,7 +66,7 @@ class Home extends React.Component {
 
       <div href="/home" className="container">
         <SearchBar searchCardsProp={this.searchCards} />
-        <FilterBar sortByPriceUpProp={this.sortByPriceUp} sortByPriceDownProp={this.sortByPriceDown} sortByDateUpProp={this.sortByDateUp} sortByDateDownProp={this.sortByDateDown}/>
+        <FilterBar sortByPriceUpProp={this.sortByPriceUp} sortByPriceDownProp={this.sortByPriceDown} sortByNameUpProp={this.sortByNameUp} sortByNameDownProp={this.sortByNameDown} sortByDateUpProp={this.sortByDateUp} sortByDateDownProp={this.sortByDateDown}/>
         <div className="body">
           <Card cards={filteredCards} />
         </div>

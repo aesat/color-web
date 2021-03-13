@@ -34,13 +34,13 @@ class CardCreator extends Component {
         axios.post("/home",{title: this.state.title,price:this.state.price ,description: this.state.description})
             .then((response) => {
                 console.log(response.data)
+                window.location.href="http://localhost:3000/rec"
             })
             .catch(e => console.log(e))
 
-           
-
             
-    }
+
+           }
 
     render() {
         return (

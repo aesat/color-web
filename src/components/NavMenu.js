@@ -10,7 +10,7 @@ class NavMenu extends React.Component {
             <div className="container">
 
                 <Navbar className="navbar" bg="dark" variant="dark">
-                <Navbar.Brand href="/">TOPTAN SATIŞ</Navbar.Brand>
+                <Navbar.Brand href="/">CHERCHİ</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link className="links" href="/">Anasayfa</Nav.Link>
                     <Nav.Link className="links" href="pictures">Fotoğraflar</Nav.Link>
