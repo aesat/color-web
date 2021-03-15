@@ -4,6 +4,7 @@ import Card from './Card'
 import axios from 'axios';
 import SearchBar from './SearchBar'
 import FilterBar from './FilterBar';
+import Paggination from './Paggination';
 
 
 class Home extends React.Component {
@@ -52,6 +53,13 @@ class Home extends React.Component {
     this.state.cards.sort((a,b)=>(a.id>b.id) ? 1:-1)
   }
 
+  pagginationSort=()=>{
+    
+
+     
+  }
+
+  
   render() {
 
     let filteredCards = this.state.cards.filter(
@@ -69,6 +77,7 @@ class Home extends React.Component {
         <FilterBar sortByPriceUpProp={this.sortByPriceUp} sortByPriceDownProp={this.sortByPriceDown} sortByNameUpProp={this.sortByNameUp} sortByNameDownProp={this.sortByNameDown} sortByDateUpProp={this.sortByDateUp} sortByDateDownProp={this.sortByDateDown}/>
         <div className="body">
           <Card cards={filteredCards} />
+          <Paggination pagginationSortProp={this.pagginationSort} pageNumProp={this.state.cards}/>
         </div>
 
       </div>
